@@ -1,6 +1,7 @@
 import { createBrowserRouter } from 'react-router-dom';
 import App from '../App';
 
+import MainPage from '../pages/MainPage/MainPage.jsx';
 import PostEdit from '../pages/PostEdit';
 import PostDetail from '../pages/PostDetail';
 import PostList from '../pages/PostList';
@@ -14,6 +15,10 @@ const router = createBrowserRouter([
     element: <App />,
     children: [
       { path: 'posts', element: <PostList /> },
+      {
+        index: true,
+        element: <MainPage />,
+      },
       {
         path: 'posts/:id/edit',
         element: <PostEdit />,
