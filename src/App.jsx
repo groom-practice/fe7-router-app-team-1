@@ -7,6 +7,8 @@ import PostsPage from "./pages/PostsPage/PostsPage.jsx";
 import BackPage from "./pages/BackPage/BackPage.jsx";
 import { getItem, removeItem } from "./utils/storage.js";
 
+import { Outlet } from 'react-router-dom';
+
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(() => !!getItem("loginUser"));
 
@@ -29,10 +31,11 @@ function App() {
             <Route path="/posts" element={<PostsPage />} />
             <Route path="/back" element={<BackPage />} />
           </Routes>
+
+          <Outlet />
         </div>
       </div>
     </BrowserRouter>
-  );
 }
 
 export default App;
