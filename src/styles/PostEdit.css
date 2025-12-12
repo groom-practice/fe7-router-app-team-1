@@ -102,6 +102,11 @@
   font-weight: 700;
 }
 
+.save-button:disabled {
+  background: #a0a0a0;
+  cursor: not-allowed;
+}
+
 .cancel-button:hover,
 .save-button:hover {
   transform: translateY(-2px);

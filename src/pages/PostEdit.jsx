@@ -1,14 +1,23 @@
-import { Form, useLoaderData, useNavigate } from 'react-router-dom';
+import {
+  Form,
+  useLoaderData,
+  useNavigate,
+  useNavigation,
+} from 'react-router-dom';
 import '../styles/PostEdit.css';
 
 export default function PostEdit() {
   const post = useLoaderData();
 
   const navigate = useNavigate();
+  const navigation = useNavigation();
 
   const handleCancel = () => {
     navigate(-1);
   };
+
+  const loading =
+    navigation.state === 'loading' || navigation.state === 'submitting';
 
   return (
     <div className="post-edit-container">
@@ -50,8 +59,8 @@ export default function PostEdit() {
             >
               취소
             </button>
-            <button type="submit" className="save-button">
-              저장
+            <button type="submit" className="save-button" disabled={loading}>
+              {loading ? '저장 중...' : '저장'}
             </button>
           </div>
         </Form>
