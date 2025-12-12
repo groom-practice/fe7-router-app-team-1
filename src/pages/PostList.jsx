@@ -67,7 +67,7 @@ export default function PostList() {
 
     await deletePost(openModal);
     setOpenModal(null);
-    setAllPosts((prev) => prev.filter((p) => p.id !== openModal));
+    setPosts((prev) => prev.filter((p) => p.id !== openModal));
   };
 
   return (
