@@ -1,0 +1,25 @@
+.main-content {
+  flex: 1 1 auto;
+  padding: 48px 40px;
+}
+.center-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 70vh;
+  text-align: center;
+}
+.main-title {
+  font-size: 2.2rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+  color: #23235b;
+  letter-spacing: 2px;
+}
+.main-login-btn {
+  margin-top: 12px;
+  font-size: 1.1rem;
+  padding: 12px 32px;
+  font-weight: 600;
+}

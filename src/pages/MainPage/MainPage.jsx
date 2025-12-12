@@ -1,5 +1,6 @@
 import React from "react";
-import Button from "../components/Button.jsx";
+import "./CSS/mainpage.css";
+import Button from "../../components/Button/Button.jsx";
 
 const MainPage = ({ onLoginClick, isLoggedIn }) => {
   const handleLogin = () => {

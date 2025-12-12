@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import Header from "./components/Header.jsx";
-import Sidebar from "./components/Sidebar.jsx";
-import MainPage from "./pages/MainPage.jsx";
+import Header from "./components/Header/Header.jsx";
+import Sidebar from "./components/Sidebar/Sidebar.jsx";
+import MainPage from "./pages/MainPage/MainPage.jsx";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
