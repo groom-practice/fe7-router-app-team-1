@@ -3,16 +3,35 @@ import { useLoaderData, useNavigate } from 'react-router-dom';
 
 import { deletePostById } from '../apis/deletePostById.js';
 
+import { getItem } from '../utils/storage.js';
+
 import '../styles/PostDetail.css';
+
+const initialFavoriteState = JSON.parse(getItem('favoritePosts')) || [];
 
 export default function PostDetail() {
   const post = useLoaderData();
   const navigate = useNavigate();
 
-  const [isFavorite, setIsFavorite] = useState(false);
+  const [isFavorite, setIsFavorite] = useState(
+    initialFavoriteState.includes(post.id)
+  );
 
   const handleFavoriteClick = () => {
     setIsFavorite(!isFavorite);
+    updateFavoriteState();
+  };
+
+  const updateFavoriteState = () => {
+    if (isFavorite) {
+      const updatedFavorites = initialFavoriteState.filter(
+        (id) => id !== post.id
+      );
+      localStorage.setItem('favoritePosts', JSON.stringify(updatedFavorites));
+    } else {
+      const updatedFavorites = [...initialFavoriteState, post.id];
+      localStorage.setItem('favoritePosts', JSON.stringify(updatedFavorites));
+    }
   };
 
   const handleDelete = async () => {
