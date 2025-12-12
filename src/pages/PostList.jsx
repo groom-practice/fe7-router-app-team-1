@@ -4,6 +4,7 @@ import getAllPosts from '../apis/getAllPosts';
 import deletePost from '../apis/deletePost';
 import { createPortal } from 'react-dom';
 import { Link } from 'react-router-dom';
+import Button from '../components/Button/Button.jsx';
 
 export default function PostList() {
   const [allPosts, setAllPosts] = useState([]); // 전체 데이터
@@ -79,7 +80,7 @@ export default function PostList() {
             <Link to={`/posts/${post.id}`}>
               {post.id}. {post.title}
             </Link>{' '}
-            <button onClick={() => setOpenModal(post.id)}>Delete</button>
+            <Button onClick={() => setOpenModal(post.id)}>Delete</Button>
           </li>
         ))}
       </ul>
@@ -104,8 +105,8 @@ export default function PostList() {
             <div className="deleteModal">
               <h3>Are you sure you want to delete id={openModal} post?</h3>
               <div className="deleteModalBtn">
-                <button onClick={handleDelete}>Yes</button>
-                <button onClick={() => setOpenModal(null)}>No</button>
+                <Button onClick={handleDelete}>Yes</Button>
+                <Button onClick={() => setOpenModal(null)}>No</Button>
               </div>
             </div>
           </div>,
