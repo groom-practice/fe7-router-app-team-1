@@ -7,15 +7,17 @@ import PostDetail from '../pages/PostDetail';
 
 import { getPostById } from '../apis/getPostById.js';
 import { updatePost } from '../apis/updatePost';
-
-import { getPostById } from '../apis/getPostById';
-
+import MainPage from '../pages/MainPage/MainPage.jsx';
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <App />,
     children: [
+      {
+        index: true,
+        element: <MainPage />,
+      },
       {
         path: 'posts/:id/edit',
         element: <PostEdit />,
@@ -28,11 +30,11 @@ const router = createBrowserRouter([
           };
           return updatePost(params.id, updatedPost);
         },
-        {  
-          path: 'posts/:id',
-          element: <PostDetail />,
-          loader: async ({ params }) => await getPostById(params.id),
-        }
+      },
+      {
+        path: 'posts/:id',
+        element: <PostDetail />,
+        loader: async ({ params }) => await getPostById(params.id),
       },
     ],
   },
