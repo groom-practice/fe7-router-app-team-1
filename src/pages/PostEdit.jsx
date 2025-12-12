@@ -25,6 +25,7 @@ export default function PostEdit() {
               name="title"
               className="form-input"
               placeholder="제목을 입력하세요"
+              defaultValue={post.title}
               required
             />
           </label>
@@ -35,6 +36,7 @@ export default function PostEdit() {
               name="body"
               className="form-textarea"
               placeholder="내용을 입력하세요"
+              defaultValue={post.body}
               rows={10}
               required
             />
