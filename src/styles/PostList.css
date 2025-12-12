@@ -1,0 +1,49 @@
+.postListSection {
+  padding: 40px;
+}
+
+.postListSection > h3 {
+  font-size: 25px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.postListSection > ul > li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  margin-bottom: 20px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  opacity: 0;
+
+  transition: opacity 0.5s ease;
+}
+
+.postListSection > ul > li.fade-in {
+  opacity: 1;
+}
+
+.deleteModal {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.deleteModal > h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.deleteModal > .deleteModalBtn {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.deleteModal > .deleteModalBtn button {
+  padding: 6px 12px;
+}
