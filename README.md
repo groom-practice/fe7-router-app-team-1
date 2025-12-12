@@ -1,16 +1,45 @@
-# React + Vite
+# 📝 React Router를 이용한 게시판 앱
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+이 프로젝트는 React와 React Router를 사용하여 간단한 게시물 관리 애플리케이션입니다.
 
-Currently, two official plugins are available:
+## ✨ 주요 기능
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 메인페이지 (로그인)
+- 게시물 목록 조회
+- 게시물 상세 페이지 조회
+- 게시물 수정
+- 게시물 삭제
 
-## React Compiler
+## 📂 폴더 구조
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```
+/
+├─── .github/         # GitHub 템플릿 (이슈, PR)
+├─── public/          # 정적 파일 (이미지 등)
+├─── src/             # 소스 코드 루트
+│   ├─── apis/        # API 통신 관련 함수
+│   ├─── assets/      # 프로젝트에서 사용하는 자원
+│   ├─── components/  # 공통 재사용 컴포넌트
+│   ├─── layout/      # 페이지 레이아웃 컴포넌트
+│   ├─── pages/       # 라우팅되는 페이지 컴포넌트
+│   │   ├─── BackPage/
+│   │   ├─── MainPage/
+│   │   ├─── PostsPage/
+│   │   ├─── PostDetail.jsx
+│   │   ├─── PostEdit.jsx
+│   │   └─── PostList.jsx
+│   ├─── routes/      # 라우터 설정
+│   ├─── App.jsx      # 메인 애플리케이션 컴포넌트
+│   └─── main.jsx     # 애플리케이션 진입점
+├─── .gitignore
+├─── package.json     # 프로젝트 정보 및 의존성
+└─── README.md        # 프로젝트 문서
+```
 
-## Expanding the ESLint configuration
+## © 커밋 컨벤션
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- `feat`: 새로운 기능 추가
+- `fix`: 버그 수정
+- `docs`: 문서만 변경
+- `style`: 코드 스타일 변경 (기능 영향 없음)
+- `refactor`: 기능 변경 없는 코드 구조 개선
