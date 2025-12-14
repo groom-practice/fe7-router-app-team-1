@@ -4,7 +4,9 @@ import {
   useNavigate,
   useNavigation,
 } from 'react-router-dom';
-import '../styles/PostEdit.css';
+import '../styles/pages/PostEdit.css';
+import Button from '../components/Button';
+
 
 export default function PostEdit() {
   const post = useLoaderData();
@@ -52,16 +54,16 @@ export default function PostEdit() {
           </label>
 
           <div className="post-edit-actions">
-            <button
+            <Button
               type="button"
               className="cancel-button"
               onClick={handleCancel}
             >
               취소
-            </button>
-            <button type="submit" className="save-button" disabled={loading}>
+            </Button>
+            <Button type="submit" className="save-button" disabled={loading}>
               {loading ? '저장 중...' : '저장'}
-            </button>
+            </Button>
           </div>
         </Form>
       </div>

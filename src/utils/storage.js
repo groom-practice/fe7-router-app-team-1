@@ -6,6 +6,7 @@ const setItem = (key, value) => {
   }
 };
 
+
 const getItem = (key) => {
   try {
     const item = window.localStorage.getItem(key);
@@ -15,6 +16,7 @@ const getItem = (key) => {
   }
 };
 
+
 const removeItem = (key) => {
   try {
     window.localStorage.removeItem(key);
@@ -22,12 +24,16 @@ const removeItem = (key) => {
     // 예외 무시
   }
 };
+
+
 function remove(key) {
   localStorage.removeItem(key);
 }
 
+
 function clear() {
   localStorage.clear();
 }
+
 
 export { getItem, setItem, remove, clear, removeItem };

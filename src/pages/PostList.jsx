@@ -1,10 +1,10 @@
 import { useEffect, useState, useRef } from 'react';
-import '../styles/PostList.css';
 import getAllPosts from '../apis/getAllPosts';
 import deletePost from '../apis/deletePost';
 import { createPortal } from 'react-dom';
 import { Link } from 'react-router-dom';
-import Button from '../components/Button/Button.jsx';
+import Button from '../components/Button.jsx';
+import "../styles/pages/PostList.css";
 
 export default function PostList() {
   const [allPosts, setAllPosts] = useState([]); // 전체 데이터
@@ -20,7 +20,7 @@ export default function PostList() {
   useEffect(() => {
     getAllPosts().then((res) => {
       setAllPosts(res);
-      setPosts(allPosts.slice(0, postsPerPage)); // 처음 렌더링 10개 데이터만
+      setPosts(res.slice(0, postsPerPage)); // 처음 렌더링 10개 데이터만
     });
   }, []);
 
@@ -80,7 +80,7 @@ export default function PostList() {
             <Link to={`/posts/${post.id}`}>
               {post.id}. {post.title}
             </Link>{' '}
-            <Button onClick={() => setOpenModal(post.id)}>Delete</Button>
+            <Button onClick={() => setOpenModal(post.id)}>삭제하기</Button>
           </li>
         ))}
       </ul>
@@ -103,10 +103,10 @@ export default function PostList() {
             }}
           >
             <div className="deleteModal">
-              <h3>Are you sure you want to delete id={openModal} post?</h3>
+              <h3> {openModal}번 포스트를 삭제하시겠습니까? </h3>
               <div className="deleteModalBtn">
-                <Button onClick={handleDelete}>Yes</Button>
-                <Button onClick={() => setOpenModal(null)}>No</Button>
+                <Button onClick={handleDelete}>네</Button>
+                <Button onClick={() => setOpenModal(null)}>아니오</Button>
               </div>
             </div>
           </div>,

@@ -1,7 +1,7 @@
 import { createBrowserRouter } from 'react-router-dom';
 import App from '../App';
 
-import MainPage from '../pages/MainPage/MainPage.jsx';
+import MainPage from '../pages/MainPage.jsx';
 import PostEdit from '../pages/PostEdit';
 import PostDetail from '../pages/PostDetail';
 import PostList from '../pages/PostList';

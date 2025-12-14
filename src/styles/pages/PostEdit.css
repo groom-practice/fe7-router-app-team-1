@@ -1,5 +1,6 @@
 .post-edit-container {
   min-height: 70vh;
+  width: 100%;
   padding: 40px 20px;
   display: flex;
   align-items: center;
@@ -57,8 +58,8 @@
 
 .form-input,
 .form-textarea {
-  width: 100%;
-  padding: 12px 14px;
+  width: 860px;
+  padding: 15px 20px 20px 20px;
   border-radius: 10px;
   border: 1px solid #e6e6ef;
   background: #fafafa;

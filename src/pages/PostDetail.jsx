@@ -1,11 +1,9 @@
 import { useState } from 'react';
 import { useLoaderData, useNavigate } from 'react-router-dom';
-
 import { deletePostById } from '../apis/deletePostById.js';
-
 import { getItem } from '../utils/storage.js';
+import '../styles/pages/PostDetail.css';
 
-import '../styles/PostDetail.css';
 
 const initialFavoriteState = JSON.parse(getItem('favoritePosts')) || [];
 
@@ -13,14 +11,17 @@ export default function PostDetail() {
   const post = useLoaderData();
   const navigate = useNavigate();
 
+
   const [isFavorite, setIsFavorite] = useState(
     initialFavoriteState.includes(post.id)
   );
+
 
   const handleFavoriteClick = () => {
     setIsFavorite(!isFavorite);
     updateFavoriteState();
   };
+
 
   const updateFavoriteState = () => {
     if (isFavorite) {
@@ -33,6 +34,7 @@ export default function PostDetail() {
       localStorage.setItem('favoritePosts', JSON.stringify(updatedFavorites));
     }
   };
+
 
   const handleDelete = async () => {
     const confirm = window.confirm('정말로 이 게시물을 삭제하시겠습니까?');
@@ -50,11 +52,14 @@ export default function PostDetail() {
     navigate('/posts');
   };
 
+
   return (
     <div className="post-detail-container">
       <div className="post-detail-wrapper">
         <div className="post-detail-header">
+
           <span className="post-id">Post #{post.id}</span>
+
           <button
             className={`favorite-button ${isFavorite ? 'active' : ''}`}
             onClick={handleFavoriteClick}
@@ -70,6 +75,7 @@ export default function PostDetail() {
           <p>{post.body}</p>
         </div>
 
+
         <div className="post-footer">
           <button
             className="edit-button"
@@ -80,6 +86,7 @@ export default function PostDetail() {
           <button className="delete-button" onClick={handleDelete}>
             삭제하기
           </button>
+
         </div>
       </div>
     </div>
